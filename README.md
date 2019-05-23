@@ -30,14 +30,14 @@ Dans ce travail de laboratoire, vous allez configurer des routeurs Cisco émulé
  
 ## Matériel
 
-La manière la plus simple de faire ce laboratoire est dans les machines des salles de labo. Le logiciel d'émulation c'est eve-ng. Vous trouverez un guide très condensé pour l'utilisation de eve-ng ici.
+La manière la plus simple de faire ce laboratoire est dans les machines des salles de labo. Le logiciel d'émulation c'est eve-ng. Vous trouverez un [guide très condensé](files/Fonctionnement_EVE-NG.pdf) pour l'utilisation de eve-ng ici.
 
 Vous pouvez faire fonctionner ce labo sur vos propres machines à condition de copier la VM eve-ng et d'utiliser Windows (c'est possible de le faire fonctionner sur d'autres systèmes mais ça nécessite un effort qui ne vaut pas la peine...).
 
 
 ## Fichiers nécessaires 
 
-Tout ce qu'il vous faut c'est un fichier de projet eve-ng, que vous pourrez importer directement dans votre environnement de travail.
+Tout ce qu'il vous faut c'est un [fichier de projet eve-ng](files/eve-ng_Labo_VPN_SRX.zip), que vous pourrez importer directement dans votre environnement de travail.
 
 
 ## Mise en place
@@ -57,21 +57,24 @@ Voici le projet eve-ng utilisé pour implémenter la topologie. Le réseau Inter
 
 - Commencer par importer le projet dans eve-ng.
 - Prenez un peu de temps pour vous familiariser avec la topologie présentée dans ce guide et comparez-la au projet eve-ng. Identifiez les éléments, les interconnexions et les adresses IPs.
-- À tout moment, il vous est possible de sauvegarder la configuration dans la mémoire de vos routeurs. Cette opération devra être réalisée au minimum à la fin de chaque journée de laboratoire (mais il est recommandé de le faire après chaque modification)Pour ce faire procédez comme suit :
+- À tout moment, il vous est possible de sauvegarder la configuration dans la mémoire de vos routeurs :
 	- Au Shell privilégié (symbole #) entrer la commande suivante pour sauvegarder la configuration actuelle dans la mémoire nvram du routeur : ```wr```
-	- Vous pouvez faire des sauvegardes de la configuration (exporter) dans un fichier - c.f. document guide eve-ng 
+	- Vous **devez** faire des sauvegardes de la configuration (exporter) dans un fichier - c.f. [document guide eve-ng](files/Fonctionnement_EVE-NG.pdf) 
 
 
 ### Vérification de la configuration de base des routeurs
 Objectifs:
 
+Vérifier que le projet a été importé correctement. Pour cela, nous allons contrôler certains paramètres :
+
 - Etat des interfaces (`show interface`)
 - Connectivité (`ping`, `show arp`)
 - Contrôle du DHCP serveur hébergé sur R2
 
-Pour accéder à la console de R1, par exemple, il suffit de lancer l'execution de la simulation et de clicker sur l'icône du routeur.
 
-- Contrôlez l’état de toutes vos interfaces - Pour contrôler l’état de vos interfaces les commandes suivantes sont utiles :
+### A faire...
+
+- Contrôlez l’état de toutes vos interfaces dans les deux routeurs et le routeur qui simule l'Internet - Pour contrôler l’état de vos interfaces (dans R1, par exmeple) les commandes suivantes sont utiles :
 
 ```
 R1# show ip interface brief
@@ -153,7 +156,7 @@ Pour déclencher et pratiquer les captures vous allez « pinger » votre routeur
 
 ## Configuration VPN LAN 2 LAN
 
-**Il est votre responsabilité de chercher vous-même sur internet toute information relative à la configuration que vous ne comprenez pas ! La documentation CISCO en ligne est extrêmement complète !**
+**Il est votre responsabilité de chercher vous-même sur internet toute information relative à la configuration que vous ne comprenez pas ! La documentation CISCO en ligne est extrêmement complète et le temps pour rendre le labo est plus que suffisant !**
 
 Nous allons établir un VPN IKE/IPsec entre le réseau de votre « loopback 1 » sur R1 (172.16.1.0/24) et le réseau de votre « VPC » R2 (172.17.1.0/24). La terminologie Cisco est assez « particulière » ; elle est listée ici, avec les étapes de configuration, qui seront les suivantes :
 
@@ -163,6 +166,7 @@ Nous allons établir un VPN IKE/IPsec entre le réseau de votre « loopback 1 »
 - Configuration du mode de chiffrement IPsec
 - Configuration du trafic à chiffrer (access list)
 - Activation du chiffrement (crypto map)
+
 
 ### Configuration IKE
 
