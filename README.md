@@ -352,7 +352,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 ---
 
 
-**Question 9: Expliquez si c’est un mode tunnel ou transport. **
+**Question 9: Expliquez si c’est un mode tunnel ou transport.**
 
 ---
 
@@ -361,7 +361,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 ---
 
 
-**Question 10: Expliquez quelles sont les parties du paquet qui sont chiffrées. Donnez l’algorithme cryptographique correspondant. **
+**Question 10: Expliquez quelles sont les parties du paquet qui sont chiffrées. Donnez l’algorithme cryptographique correspondant.**
 
 ---
 
