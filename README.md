@@ -306,7 +306,7 @@ interface Ethernet0/0
 Sur R2 il s’agit, selon le schéma, de l’interface « Ethernet0/0 » et la configuration sera :
 
 ```
-interface FastEthernet0/0
+interface Ethernet0/0
   crypto map MY-CRYPTO
 ```
 
