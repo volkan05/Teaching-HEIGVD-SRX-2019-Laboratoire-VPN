@@ -28,8 +28,8 @@ Dans ce travail de laboratoire, vous allez configurer des routeurs Cisco émulé
 -	Capture Sniffer avec filtres précis sur la communication à épier
 -	Activation du mode « debug » pour certaines fonctions du routeur
 -	Observation des protocoles IPSec
- 
- 
+
+
 ## Matériel
 
 La manière la plus simple de faire ce laboratoire est dans les machines des salles de labo. Le logiciel d'émulation c'est eve-ng. Vous trouverez un [guide très condensé](files/Fonctionnement_EVE-NG.pdf) pour l'utilisation de eve-ng ici.
@@ -92,7 +92,7 @@ Un « protocol » différent de `up` indique la plupart du temps que l’interfa
 
 ---
 
-**Réponse :**  
+**Réponse :**  aucun problème rencontré
 
 ---
 
@@ -129,7 +129,7 @@ Pour votre topologie il est utile de contrôler la connectivité entre :
 
 ---
 
-**Réponse :**  
+**Réponse :**  Oui, tous les pings passent
 
 ---
 
@@ -152,7 +152,7 @@ Pour déclencher et pratiquer les captures vous allez « pinger » votre routeur
 
 ---
 
-**Screenshots :**  
+**Screenshots :**  ![Q3](.\images\Q3.jpg)
 
 ---
 
@@ -225,14 +225,25 @@ Vous pouvez consulter l’état de votre configuration IKE avec les commandes su
 
 **Réponse :**  
 
----
+![Q4_1](.\images\Q4_1.jpg)
 
+![Q4_2](.\images\Q4_2.jpg)
+
+
+
+---
 
 **Question 5: Utilisez la commande `show crypto isakmp key` et faites part de vos remarques :**
 
 ---
 
 **Réponse :**  
+
+![Q5_1](.\images\Q5_1.png)
+
+![Q5_2](.\images\Q5_2.png)
+
+
 
 ---
 
@@ -327,6 +338,12 @@ Pensez à démarrer votre sniffer sur la sortie du routeur R2 vers internet avan
 
 **Réponse :**  
 
+![Q6](.\images\Q6.png)
+
+![Q6_2](.\images\Q6_2.png)
+
+![Q6_3](.\images\Q6_3.png)
+
 ---
 
 **Question 7: Reportez dans votre rapport une petite explication concernant les différents « timers » utilisés par IKE et IPsec dans cet exercice (recherche Web). :**
@@ -351,12 +368,13 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-
 **Question 9: Expliquez si c’est un mode tunnel ou transport.**
 
 ---
 
 **Réponse :**  
+
+![Q9](.\images\Q9.png)
 
 ---
 
@@ -365,16 +383,19 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse :**  
+**Réponse :**  En mode tunnel, le paquet entier est chiffré (Entête IP originale, Données, ESP trlr).
+
+L'algorithme cryptographique utilisé est AES 192 bits (voir screen question 9).
 
 ---
-
 
 **Question 11: Expliquez quelles sont les parties du paquet qui sont authentifiées. Donnez l’algorithme cryptographique correspondant.**
 
 ---
 
-**Réponse :**  
+**Réponse :**  En mode tunnel, le paquet entier ainsi que le "header ESP" sont authentifiés.
+
+L'algorithme d'authentification est HMAC utilisant SHA1.
 
 ---
 
@@ -383,6 +404,8 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse :**  
+**Réponse :**  Le protocole ESP permet de protéger l'intégrité du paquet initial.
+
+L'algorithme cryptographique utilisé pour garantir l'intégrité du message est SHA-1.
 
 ---
