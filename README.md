@@ -152,7 +152,7 @@ Pour déclencher et pratiquer les captures vous allez « pinger » votre routeur
 
 ---
 
-**Screenshots :**  ![Q3](.\images\Q3.jpg)
+**Screenshots :**  ![Q3](images\Q3.jpg)
 
 ---
 
@@ -225,9 +225,9 @@ Vous pouvez consulter l’état de votre configuration IKE avec les commandes su
 
 **Réponse :**  
 
-![Q4_1](.\images\Q4_1.jpg)
+![Q4_1](images\Q4_1.jpg)
 
-![Q4_2](.\images\Q4_2.jpg)
+![Q4_2](images\Q4_2.jpg)
 
 
 
@@ -239,9 +239,9 @@ Vous pouvez consulter l’état de votre configuration IKE avec les commandes su
 
 **Réponse :**  
 
-![Q5_1](.\images\Q5_1.png)
+![Q5_1](images\Q5_1.png)
 
-![Q5_2](.\images\Q5_2.png)
+![Q5_2](images\Q5_2.png)
 
 
 
@@ -338,11 +338,11 @@ Pensez à démarrer votre sniffer sur la sortie du routeur R2 vers internet avan
 
 **Réponse :**  
 
-![Q6](.\images\Q6.png)
+![Q6](images\Q6.png)
 
-![Q6_2](.\images\Q6_2.png)
+![Q6_2](images\Q6_2.png)
 
-![Q6_3](.\images\Q6_3.png)
+![Q6_3](images\Q6_3.png)
 
 ---
 
@@ -374,7 +374,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 **Réponse :**  
 
-![Q9](.\images\Q9.png)
+![Q9](images\Q9.png)
 
 ---
 
