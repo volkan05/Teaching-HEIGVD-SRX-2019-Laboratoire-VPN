@@ -229,7 +229,7 @@ Vous pouvez consulter l’état de votre configuration IKE avec les commandes su
 
 ![Q4_2](images/Q4_2.jpg)
 
-
+Nous pouvons remarquer que les routeurs ont été configuré de manière différentes. En effet, le routeur R2 a été configuré avec 2 policy de priorité différentes, alors que le routeur R1 a été configuré qu’avec une seule policy. les policy de priorité 20 des deux serveur sont symetriques et donc peuvent communiquer entre elles de manières sécurisées.
 
 ---
 
@@ -243,7 +243,7 @@ Vous pouvez consulter l’état de votre configuration IKE avec les commandes su
 
 ![Q5_2](images/Q5_2.png)
 
-
+Sur les screen ci-dessus, on peut voir que chaque routeur mémorisent l'adresse du routeur distant avec lequel il va créer le tunnel VPN. La clé pré-partagée est **cisco-1**.
 
 ---
 
@@ -338,6 +338,8 @@ Pensez à démarrer votre sniffer sur la sortie du routeur R2 vers internet avan
 
 **Réponse :**  
 
+Voici les patures des configurations des deux routeurs après avoir entré les commandes précédentes, ainsi qu’une capture montrant que les pings entre  le poste utilisateur et R1 fonctionne.
+
 ![Q6](images/Q6.png)
 
 ![Q6_2](images/Q6_2.png)
@@ -350,7 +352,7 @@ Pensez à démarrer votre sniffer sur la sortie du routeur R2 vers internet avan
 
 ---
 
-**Réponse :**  
+**Réponse :**  Les timers lifetime sont utilisés pour contrôler le re-établissement d'un tunnel quand il en a besoin. Si ces timers sont ne sont pas configrués, un tunnel IPsec sera établi mais affichera une connection perdue quand les timers expireront.
 
 ---
 
@@ -359,12 +361,13 @@ Pensez à démarrer votre sniffer sur la sortie du routeur R2 vers internet avan
 
 En vous appuyant sur les notions vues en cours et vos observations en laboratoire, essayez de répondre aux questions. À chaque fois, expliquez comment vous avez fait pour déterminer la réponse exacte (capture, config, théorie, ou autre).
 
-
 **Question 8: Déterminez quel(s) type(s) de protocole VPN a (ont) été mis en œuvre (IKE, ESP, AH, ou autre).**
 
 ---
 
-**Réponse :**  
+**Réponse :**  Nous pouvons voir sur la capture suivante que le protocole utilisé est ESP
+
+![Q8](images/Q8.png)
 
 ---
 
@@ -372,7 +375,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse :**  
+**Réponse :**  Il s’agit d’un mode tunnel comme nous pouvons le voir sur la capture suivante. En effet, nous avons défini le transform-set STRONG  qui utilise le mode tunnel alors que celui par défaut utilise le mode Transport.
 
 ![Q9](images/Q9.png)
 
